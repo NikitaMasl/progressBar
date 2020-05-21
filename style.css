@@ -1,0 +1,114 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progbar-wrapper{
+    background-color: aquamarine;
+    width: calc(100vw/1.5);
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input-container{
+    width: 100%;
+}
+
+.input-container p{
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 17px;
+}
+
+#input{
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 2px;
+}
+
+.error {
+    box-shadow: 0 0 5px 1px red;
+    border: 3px solid red;
+}
+.wrong-value {
+    visibility: hidden;
+    color: red;
+    margin-top: -1px;
+    margin-left: 3px;
+    font-size: 15px !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+.progress{
+    cursor: pointer;
+    background-color: #111;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    position: relative;
+    padding: 3px;
+}
+
+.progress:nth-child(2) .fill{
+    background-color: #10b918;
+}
+
+.fill{
+    width: 35%;
+    background:  linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.5) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0.5) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 40px;
+    border-radius: 5px;
+    height: 100%;
+    transition: width 0.3s;
+    animation: move 0.5s linear infinite paused;
+}
+
+.progress:hover .fill{
+    animation-play-state: running;
+}
+
+.progress:hover .number{
+    transform: translateY(-40px);
+    visibility: visible;
+    opacity: 1;
+}
+
+@keyframes move{
+    100%{
+        background-position: 40px 0;
+    }
+}
+
+.number{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color:  rgba(202, 194, 194, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: all .3s ease;
+    visibility: hidden;
+    opacity: 0;
+}

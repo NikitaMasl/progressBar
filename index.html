@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Progress Bar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <div class="container">
+          <div class="progbar-wrapper">
+            <div class="input-container">
+                <p>Enter the percentage of progress from 0 to 100 and press 'Enter'</p>
+                <input type="number" min="0" max="100" id="input" placeholder="Enter the percentage">
+                <p class="wrong-value">You enter the wrong value. It has to be a number from 0 to 100.</p>
+            </div>
+            <div class="progress">
+                <div class="fill"></div>
+                <div class="number">35%</div>
+            </div>
+          </div>
+      </div>
+      <script src="script.js"></script>
+  </body>
+</html>
