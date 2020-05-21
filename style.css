@@ -1,3 +1,7 @@
+body{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 .container{
     width: 100vw;
     height: 100vh;
@@ -7,10 +11,11 @@
 }
 
 .progbar-wrapper{
-    background-color: aquamarine;
+    background-color: rgb(255, 255, 255);
     width: calc(100vw/1.5);
     height: 300px;
     border-radius: 10px;
+    border: 2px solid rgb(114, 113, 113);
     box-shadow: 0 0 10px rgba(0,0,0,0.5); 
     padding: 10px;
     display: flex;
@@ -20,21 +25,30 @@
 }
 
 .input-container{
-    width: 100%;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
 }
 
 .input-container p{
     font-weight: 700;
-    text-decoration: underline;
-    font-size: 17px;
+    font-size: 25px;
+    position: relative;
+    margin-bottom: 5px;
 }
 
 #input{
-    width: 100%;
+    width: calc(100% - 10px);
     background-color: white;
     border-radius: 5px;
-    border: 1px solid grey;
+    border: 2px solid rgb(114, 113, 113);
+    height: 40px;
     padding: 2px;
+    font-size: 25px;
+}
+
+#input:focus{
+    outline-style: none;
 }
 
 .error {
@@ -44,7 +58,7 @@
 .wrong-value {
     visibility: hidden;
     color: red;
-    margin-top: -1px;
+    margin-top: 5px;
     margin-left: 3px;
     font-size: 15px !important;
     text-decoration: none !important;
@@ -53,62 +67,47 @@
 
 .progress{
     cursor: pointer;
-    background-color: #111;
-    width: 100%;
+    width: 90%;
     height: 40px;
+    border: 2px solid rgb(114, 113, 113);
     border-radius: 5px;
     position: relative;
-    padding: 3px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .progress:nth-child(2) .fill{
-    background-color: #10b918;
+    background-color: #5365ff;
+}
+
+.border{
+    width: calc(100% - 4px);
+    height: 36px;
+    border: 2px solid white;
+    background-color: rgb(218, 216, 216);
+    border-radius: 5px;
 }
 
 .fill{
     width: 35%;
-    background:  linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0.5) 25%,
-        transparent 25%,
-        transparent 50%,
-        rgba(255, 255, 255, 0.5) 50%,
-        rgba(255, 255, 255, 0.5) 75%,
-        transparent 75%,
-        transparent
-    );
-    background-size: 40px;
+    background-size: 36px;
     border-radius: 5px;
-    height: 100%;
+    height: calc(100% - 1px);
+    margin-top: 1px;
     transition: width 0.3s;
     animation: move 0.5s linear infinite paused;
 }
 
-.progress:hover .fill{
-    animation-play-state: running;
-}
-
-.progress:hover .number{
-    transform: translateY(-40px);
+.number{ 
+    position: absolute;
+    right: 45%;
+    top: 3px;
+    color: black;
+    font-size: 25px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all .3s ease;
     visibility: visible;
     opacity: 1;
 }
 
-@keyframes move{
-    100%{
-        background-position: 40px 0;
-    }
-}
-
-.number{
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color:  rgba(202, 194, 194, 0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 15px;
-    transition: all .3s ease;
-    visibility: hidden;
-    opacity: 0;
-}
