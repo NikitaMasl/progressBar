@@ -1,5 +1,6 @@
 body{
     background-color: rgba(255, 255, 255, 0.5);
+    overflow: hidden;
 }
 
 .container{
@@ -22,6 +23,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    position: relative;
 }
 
 .input-container{
@@ -111,3 +113,20 @@ body{
     opacity: 1;
 }
 
+.link{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: -70px;
+    right: -15px;
+    font-size: 30px;
+    color: black;
+}
+.link a{
+    text-decoration: none;
+    color: black;
+}
+.link a:hover{
+    text-decoration: none;
+    color: rgb(151, 151, 151);
+}
